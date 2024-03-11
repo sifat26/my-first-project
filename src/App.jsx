@@ -1,14 +1,44 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable react/prop-types */
 import "./App.css";
 import Todo from "./Todo";
+import Actor from "./Actor";
+import Singer from "./Singer";
 
 function App() {
+  const actors=["a", "b", "c", "d", "e"]
+  const singers=[
+    {
+      name:'Kuta kuta',
+      age:22
+    },
+    {
+      name:'Kuta futa',
+      age:24
+    },
+    {
+      name:'Kuta fata',
+      age:23
+    }
+  ]
   return (
     <>
-      {/* <Header></Header> */}
-      <Todo task="Learn React"></Todo>
-      <Todo task="Explore core concept"></Todo>
+    {
+      singers.map(singer=><Singer sname={singer}></Singer>)
+    }
+    <Actor name="Bappa"> </Actor>
+    {
+      // eslint-disable-next-line react/jsx-key
+      actors.map(actor =><Actor name={actor}></Actor>)
+    }
 
-      <Todo task="Learn JSX"></Todo>
+
+
+      {/* <Header></Header> */}
+      <Todo task="Learn React" isDone={false}></Todo>
+      <Todo task="Explore core concept " isDone = {true} ></Todo>
+
+      <Todo task="Learn JSX"isDone={true}> </Todo>
       <Device name="Laptop" price="3000"></Device>
       <Device name="Mobile" price="4000"></Device>
       <Person></Person>
@@ -37,6 +67,7 @@ function Person() {
     </div>
   );
 }
+// eslint-disable-next-line react/prop-types
 function Student({ grade, Score }) {
   return (
     <div className="student">
