@@ -4,8 +4,21 @@ import "./App.css";
 import Todo from "./Todo";
 import Actor from "./Actor";
 import Singer from "./Singer";
+import Bookstore from "./Bookstore";
+
 
 function App() {
+  const books=[
+    {id:1,
+    name:'kolo',
+    price:100},
+    {id:2,
+    name:'Physics',
+    price:100},
+    {id:3,
+    name:'molo',
+    price:100}
+  ]
   const actors=["a", "b", "c", "d", "e"]
   const singers=[
     {
@@ -21,8 +34,14 @@ function App() {
       age:23
     }
   ]
+
+
   return (
     <>
+    <Bookstore books={books}>
+
+    </Bookstore>
+
     {
       singers.map(singer=><Singer sname={singer}></Singer>)
     }
